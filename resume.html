@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles/style.css">
+        <script>
+            function makeSquare() {
+            var canvas = document.getElementById("square");
+            var ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.rect(10, 10, 100, 100)
+            ctx.fillStyle = "lightblue";
+            ctx.fill();
+            }
+        </script>
+        <style>
+            svg {
+                display: inline-block;
+            }
+        </style>
+        <title>Jeremy's Resume</title>
+    </head>
+    <body>
+        <header>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#work">Work</a></li>
+                    <li><a href="index.html#demos">Demos</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="">Resume</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <details>
+                <summary onclick="makeSquare()">You found a <span id="printable-version">printable version</span> of my resume. Click for a surprise 
+                    <svg width="25" height="25">
+                        <circle cx="12" cy="12" r="10" fill="lightpink"/>
+                    </svg>
+                </summary>
+                <canvas id="square" width="150" height="150"></canvas>
+            </details>
+            <iframe src="documents/resume.pdf" title="PDF-of-Resume" width="500" height="500"></iframe>
+        </main>
+    </body>
+</html>
+
+                   <!-- ∧,,,∧           
+                   ( ̳•·• ̳)      💩     💩      
+                   /    づ 💩               
+                                            💩 -->

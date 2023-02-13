@@ -9,6 +9,9 @@
     </head>
     <body>
         <header>
+            <a href="/">
+                <img id="nav-logo" src="images/thicclogo.png" alt="logo of my handwritten initials, JH">
+            </a>
             <nav id="main-nav">
                 <ul id="main-nav-ul">
                     <li><a href="#home">Home</a></li>
@@ -16,65 +19,34 @@
                     <li><a href="#work">Work</a></li>
                     <li><a href="#demos">Demos</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <!-- <li><a href="resume.html">Resume</a></li> -->
                 </ul>
             </nav>
-            <button id="resume-button"><a href="resume.html">Resume</a></button>
+            <button id="resume-button" onclick="window.open('/documents/resume.pdf', '_blank')"><b>Resume</b></button>
         </header>
         <br>
         <main>
             <section id="home">
-                <div id="introduction-text-home">
-                    <h1 id="home-header">Hi, I'm Jeremy</h1>
-                    <p id="home-paragraph">Web developer in training</p>
+                <!-- <div class="background-img"></div> -->
+                <div id="intro-text">
+                    <h1>Hello there, I'm Jeremy</h1>
+                    <p>Soon-to-be computer science graduate</p>
                 </div>
-                <picture>
-                    <source media="(min-width:600px)" srcset="images/me2.webp">
-                    <img src="images/me.webp" alt="Photo of Jeremy">
-                </picture>
             </section>
             <br>
             <!-- in about, include education, skills, certifications -->
             <section id="about">
                 <h2>About Me</h2>
                 <p>I am currently a 4th-year UCSD student ready to enter the software development industry.</p>
-                <table>
-                    <caption>Relavent coursework</caption>
-                    <colgroup>
-                        <col span="5" style="background-color: lightblue;">
-                    </colgroup>
-                    <tr>
-                        <th>Spring 2021</th>
-                        <th>Fall 2021</th>
-                        <th>Winter 2022</th>
-                        <th>Spring 2023</th>
-                        <th>Fall 2022</th>
-                    </tr>
-                    <tr>
-                        <td>CSE 100</td>
-                        <td>CSE 101</td>
-                        <td>CSE 120</td>
-                        <td>CSE 130</td>
-                        <td>CSE 127</td>
-                    </tr>
-                    <tr>
-                        <td>CSE 105</td>
-                        <td>CSE 110</td>
-                        <td>CSE 140</td>
-                        <td>CSE 141</td>
-                        <td>CSE 152A</td>
-                    </tr>
-                </table>
+                <picture>
+                    <source media="(min-width:600px)" srcset="images/me2.webp">
+                    <img src="images/me.webp" alt="Photo of Jeremy">
+                </picture>
             </section>
             <br>
             <!-- in work, put past jobs and projects -->
-            <section id="work">
+            <section id="work" class="fade-section">
                 <h3>Work History</h3>
-                <template id="job-template">
-                    <p class="job-title"></p>
-                    <p class="job-location"></p>
-                    <ul class="job-responsibilities"></ul>
-                </template>
+                <br>
                 <h4>Technical Skills</h4>
                 <ol id="skills-ol">
                     <li>Proficient in C/C++, Java, Python</li>
@@ -86,8 +58,9 @@
             </section>
             <br>
             <!-- demos is for playing around and experimenting -->
-            <section id="demos">
+            <section id="demos" class="fade-section">
                 <h5>Demos and Experiments</h5>
+                <br>
                 <p>
                     The following demo is a project I have been working on for the last month (give or take).
                     I created a <b>convolutional neural network</b> that analyzes pictures of code and generates an
@@ -108,64 +81,38 @@
             </section>
             <br>
             <!-- include a contact form here -->
-            <section id="contact">
+            <section id="contact" class="fade-section">
                 <h6>Let's Connect</h6>
-                <form action="scripts/submitform.php" method="post">
-                    <fieldset id="personal-into-fs">
-                        <legend>Personal Info</legend>
-                        <label for="form-name">Name:</label>
-                        <input type="text" name="name" id="form-name">
-                        <br>
-                        <label for="form-email">Email:</label>
-                        <input type="email" name="email" id="form-email">
-                        <br>
-                        <label for="form-reference">How did you find me?</label>
-                        <select name="reference" id="form-reference">
-                            <option value="">not selected</option>
-                            <optgroup label="Social Media">
-                                <option value="social-media">LinkedIn</option>
-                                <option value="past-employer">Twitter</option>
-                                <option value="search-engine">Handshake</option>
-                                <option value="word-of-mouth">TikTok</option>
-                            </optgroup>
-                            <option value="other">Other</option>
-                        </select>
+                <br>
+                <form action="" method="post">
+                    <fieldset>
+                       <label for="name">Name:</label>
+                       <input type="text" id="name" name="name">
+                       <br>
+                       <label for="email">email:</label>
+                       <input type="email" id="email" name="email">
                     </fieldset>
                     <br>
-                    <fieldset id="message-fs">
-                        <legend>Message</legend>
-                            <label for="form-subject">Subject:</label>
-                            <input type="text" name="subject" id="form-subject" list="subject-list">
-                            <datalist id="subject-list">
-                                <option value="Recruitment">Recruitment</option>
-                                <option value="Past projects">Past Projects</option>
-                                <option value="Work Opportunities">Work Opportunities</option>
-                            </datalist>
-                            <br>
-                            <label for="form-message">Message:</label>
-                            <textarea name="message" id="form-message"></textarea>
+                    <fieldset>
+                       <label for="message">Message:</label>
+                       <textarea id="message" name="message"></textarea>
                     </fieldset>
                     <br>
                     <button type="submit">Submit</button>
-                </form>
+                 </form>
+                 <!-- use this nav for social media links -->
+                 <nav id="social-media-nav">
+                    <p>Stay up to date with me</p>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/jeremy-hartman-678706251/" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </nav>
             </section>
         </main>
         <br>
         <hr>
         <footer>
-            <!-- use this nav for social media links -->
-            <nav id="social-media-nav">
-                <p>Stay up to date with me</p>
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/jeremy-hartman-678706251/" target="_blank">LinkedIn</a></li>
-                </ul>
-            </nav>
-            <figure>
-                <video controls width="300" height="200">
-                    <source src="video/bruh.mp4" type="video/mp4">
-                </video>
-                <figcaption><strong>the TA grading my website be like</strong></figcaption>
-            </figure>
+            <p>Built by Jeremy Hartman &copy;2023</p>
         </footer>
     </body>
 </html>

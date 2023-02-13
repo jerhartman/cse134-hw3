@@ -4,30 +4,39 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans', sans-serif;
-  }
+}
+html {
+    scroll-behavior: smooth;
+}
 /* nav bar style ---------------------------------------- */
 header {
+    font-family: 'Noto Sans', sans-serif;
     display: flex;
     padding: 0 5rem;
     justify-content: space-between;
     align-items: center;
     text-decoration: none;
     position: fixed;
+    top: 0;
     width: 100%;
     height: 6rem;
     background-color: #333;
-    z-index: 2;
+    box-shadow: 0 1vmin 3vmin 0 rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+#nav-logo {
+    height: 3rem;
+    width: auto;
 }
 header a { /* applies to nav and button links */
     text-decoration: none;
-    color: #fff;
 }
 #main-nav a {
+    color: #fff;
     transition: all 0.25s ease-in-out;
 }
 #main-nav a:hover {
-    color: darkcyan;
+    color: rgb(223, 206, 183);
 }
 #main-nav-ul li {
     display: inline-block;
@@ -35,28 +44,55 @@ header a { /* applies to nav and button links */
 }
 header button {
     padding: 0.5rem 1rem;
-    background-color: darkgray;
+    background-color: #fff;
     border: none;
     border-radius: 1.5rem;
     cursor: pointer;
+    transition: all 0.25s ease-in-out;
 }
 header button:hover {
-    background-color: antiquewhite;
+    background-color: rgb(223, 206, 183);
 }
 /* main style ------------------------------------------ */
-main {
-    margin-top: 6rem;
-}
+/* apply to all sections */
 section {
-    padding: 3rem 5rem;
+    padding: 0 6rem;
+    padding-top: 6rem;
+    height: 100vh;
+    width: 100vw;
+    /* margin-top: 6rem; */
 }
+/* home section -------------- */
 #home {
-    padding-top: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/geometry.png");
+    background-repeat: repeat;
+    background-position: center;
+    margin-top: -1rem;
 }
-audio {
-    z-index: 1;
+#intro-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#intro-text h1{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+#intro-text p {
+    font-size: 1rem;
 }
 /* footer style ---------------------------------------- */
 footer {
     padding: 3rem 5rem;
 }
+
+/* 
+background images from:
+https://www.toptal.com/designers/subtlepatterns/one-in-a-million-s/
+https://www.toptal.com/designers/subtlepatterns/inspiration-geometry/
+*/

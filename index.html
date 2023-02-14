@@ -17,32 +17,32 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#work">Work</a></li>
-                    <li><a href="#demos">Demos</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button id="resume-button" onclick="window.open('/documents/resume.pdf', '_blank')"><b>Resume</b></button>
+            <button id="resume-button" onclick="window.open('/documents/resume.pdf', '_blank')">Resume</button>
         </header>
-        <br>
         <main>
             <section id="home">
                 <!-- <div class="background-img"></div> -->
-                <div id="intro-text">
+                <div id="home-text">
                     <h1>Hello there, I'm Jeremy</h1>
                     <p>Soon-to-be computer science graduate</p>
                 </div>
             </section>
-            <br>
             <!-- in about, include education, skills, certifications -->
             <section id="about">
-                <h2>About Me</h2>
-                <p>I am currently a 4th-year UCSD student ready to enter the software development industry.</p>
+                <div id="about-text">
+                    <h2>About Me</h2>
+                    <p>I am currently a 4th-year UCSD student ready to enter the software development industry.
+                        extra text here to see if there are any issues. even more text where i talk more about myself.
+                    </p>
+                </div>
                 <picture>
                     <source media="(min-width:600px)" srcset="images/me2.webp">
                     <img src="images/me.webp" alt="Photo of Jeremy">
                 </picture>
             </section>
-            <br>
             <!-- in work, put past jobs and projects -->
             <section id="work" class="fade-section">
                 <h3>Work History</h3>
@@ -56,30 +56,6 @@
                     <li>Software development methods: Agile and Scrum</li>
                 </ol>
             </section>
-            <br>
-            <!-- demos is for playing around and experimenting -->
-            <section id="demos" class="fade-section">
-                <h5>Demos and Experiments</h5>
-                <br>
-                <p>
-                    The following demo is a project I have been working on for the last month (give or take).
-                    I created a <b>convolutional neural network</b> that analyzes pictures of code and generates an
-                    audio file in response. <em>This is still a work in progress!</em>
-                </p>
-                <figure>
-                    <audio controls>
-                        <source src="audio/bruh.mp3" type="audio/mp3">
-                    </audio>
-                    <figcaption><strong>Audio output from my CNN</strong></figcaption>
-                </figure>
-                <aside id="code-aside">
-                    <p>Here is a <i>cricual</i> snippit of code from my CNN</p>
-                    <code>
-                        log("hello there :D")
-                    </code>
-                </aside>
-            </section>
-            <br>
             <!-- include a contact form here -->
             <section id="contact" class="fade-section">
                 <h6>Let's Connect</h6>
@@ -109,8 +85,6 @@
                 </nav>
             </section>
         </main>
-        <br>
-        <hr>
         <footer>
             <p>Built by Jeremy Hartman &copy;2023</p>
         </footer>

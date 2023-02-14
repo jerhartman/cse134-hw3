@@ -1,16 +1,84 @@
-@import url('https://fonts.googleapis.com/css?family=Noto Sans:400');
-
+/* fonts ---------------------------------------------------------- */
+/* fonts for welcome screen header */
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('/fonts/NunitoSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('/fonts/NunitoSans-Black.ttf') format('truetype');
+    font-weight: bold;
+}
+/* fonts for h2-h6 headers */
+@font-face {
+    font-family: 'Mada';
+    src: url('/fonts/Mada-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Mada';
+    src: url('/fonts/Mada-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+/* fonts for paragraph text */
+@font-face {
+    font-family: 'Muli';
+    src: url('/fonts/Muli-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Muli';
+    src: url('/fonts/Muli-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Muli';
+    src: url('/fonts/Muli-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+/* fade in animation, translates text while opacity increases */
+@keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translate(-2rem, -1rem);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+}
+/* custom global variables */
+:root {
+    --standard-font-size: 1rem;
+    --header-font-size: 2rem;
+    --welcome-font-size: 4rem;
+    --highest-priotity: 999;
+    --nav-offset: 6rem;
+    --right-left-margin: 6rem;
+    --link-trans-time: 0.3s;
+    /* commonly used colors */
+    --pure-white: #fff;
+    --geo-white: #fafafa;
+    --geo-gray: #ececec;
+    --one-in-mill-white: #ebebeb;
+    --one-in-mil-gray: #e1e1e1;
+    --accent-black: #333;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Muli', sans-serif;
+    font-size: var(--standard-font-size);
 }
 html {
     scroll-behavior: smooth;
 }
 /* nav bar style ---------------------------------------- */
 header {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Muli', sans-serif;
     display: flex;
     padding: 0 5rem;
     justify-content: space-between;
@@ -19,10 +87,10 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 6rem;
-    background-color: #333;
-    box-shadow: 0 1vmin 3vmin 0 rgba(0, 0, 0, 0.2);
-    z-index: 999;
+    height: var(--nav-offset);
+    background-color: var(--accent-black);
+    box-shadow: 0 0.5vmin 1vmin 0 rgba(0, 0, 0, 0.2);
+    z-index: var(--highest-priotity);
 }
 #nav-logo {
     height: 3rem;
@@ -32,35 +100,42 @@ header a { /* applies to nav and button links */
     text-decoration: none;
 }
 #main-nav a {
-    color: #fff;
-    transition: all 0.25s ease-in-out;
+    font-weight: normal;
+    color: var(--one-in-mil-gray);
+    transition: all var(--link-trans-time) ease-in-out;
 }
 #main-nav a:hover {
-    color: rgb(223, 206, 183);
+    color: var(--pure-white);
+    font-weight: bold;
 }
 #main-nav-ul li {
     display: inline-block;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
 }
-header button {
-    padding: 0.5rem 1rem;
-    background-color: #fff;
+button {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    background-color: var(--one-in-mil-gray);
     border: none;
     border-radius: 1.5rem;
     cursor: pointer;
-    transition: all 0.25s ease-in-out;
+    transition: all var(--link-trans-time) ease-in-out;
 }
-header button:hover {
-    background-color: rgb(223, 206, 183);
+button:hover {
+    background-color: var(--pure-white);
 }
 /* main style ------------------------------------------ */
 /* apply to all sections */
 section {
-    padding: 0 6rem;
-    padding-top: 6rem;
+    padding: 0 var(--right-left-margin);
+    padding-top: var(--nav-offset);
     height: 100vh;
     width: 100vw;
-    /* margin-top: 6rem; */
+    /* margin-top: var(--nav-offset); */
+}
+h2, h3, h4, h5, h6 {
+    font-family: 'Mada';
+    font-size: var(--header-font-size);
 }
 /* home section -------------- */
 #home {
@@ -68,27 +143,48 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("/images/geometry.png");
+    background-image: url('/images/geometry.png');
     background-repeat: repeat;
     background-position: center;
-    margin-top: -1rem;
 }
-#intro-text {
+#home-text {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation: fade-in 2s ease-out forwards;
 }
-#intro-text h1{
-    font-size: 4rem;
+#home-text h1{
+    font-family: 'NunitoSans', sans-serif;
+    font-weight: bold;
+    font-size: var(--welcome-font-size);
     margin-bottom: 1rem;
 }
-#intro-text p {
-    font-size: 1rem;
+#home-text p {
+    font-size: var(--standard-font-size);
+}
+/* about section ------------- */
+#about {
+    background-color: var(--geo-gray);
+    display: flex;
+    align-items: center;
+
+}
+/* contact section ----------- */
+#contact {
+    height: 88vh;
 }
 /* footer style ---------------------------------------- */
 footer {
-    padding: 3rem 5rem;
+    height: 12vh;
+    background-color: var(--accent-black);
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+footer p {
+    color: var(--one-in-mil-gray);
+    margin-left: 5rem;
 }
 
 /* 
